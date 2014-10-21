@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<body>
+		<h:form>
+			<p>
+			<h:inputHidden value="#{customerController.customerId}" converter="javax.faces.Long" />
+			<h:inputHidden value="#{customerController.addressId}" converter="javax.faces.Long" />
+			<h:messages />
+			<h:selectOneMenu value="#{customerController.salutation}">
+				<f:selectItem itemValue="Mr." itemLabel="Mr." />
+				<f:selectItem itemValue="Ms." itemLabel="Ms." />
+			</h:selectOneMenu>
+				First Name <h:inputText value="#{customerController.firstName}" required="true" label="First Name"></h:inputText>
+				<br />
+				Last Name <h:inputText value="#{customerController.lastName}" required="true" label="Last Name"></h:inputText>
+				<br />
+				Gender <h:selectOneRadio value="#{customerController.gender}">
+					<f:selectItem itemValue="L" itemLabel="Laki" />
+					<f:selectItem itemValue="perempuan" itemLabel="Perempuan" />
+				</h:selectOneRadio>
+				<br />
+				Email <h:inputText value="#{customerController.email}" required="true" label="Email"></h:inputText>
+				<br />
+				Birthday <h:inputText value="#{customerController.birthDate}" required="true" label="Birthday">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:inputText>
+				<br />
+				Home Phone <h:inputText value="#{customerController.homePhone}" required="true" label="Home Phone"></h:inputText>
+				<br />
+				Mobile Phone <h:inputText value="#{customerController.mobileNo}" required="true" label="Mobile Phone"></h:inputText>
+				<br />
+				Password <h:inputSecret value="#{customerController.password}" required="true" label="Password"><f:validateLength minimum="6" maximum="50"></f:validateLength></h:inputSecret>
+				<br />
+			</p>
+			<p>
+				City <h:inputText value="#{customerController.city}" required="true" label="City"></h:inputText>
+				<br />
+				Postal Code <h:inputText value="#{customerController.postalCode}" required="true" label="Postal Code"></h:inputText>
+				<br />
+				Street <h:inputText value="#{customerController.street}" required="true" label="Street"></h:inputText>
+				<br />
+				<h:commandButton action="#{customerController.save}" value="Submit" />
+			</p>
+		</h:form>
+</body>
+</html>
