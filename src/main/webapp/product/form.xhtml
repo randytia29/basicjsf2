@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<body>
+		<h:form>
+			<p>		
+			<h:inputHidden value="#{productController.id}" converter="javax.faces.Long" />
+			<h:inputHidden value="#{productController.productId}" converter="javax.faces.Long" />
+			<h:inputHidden value="#{productController.kategoriId}" converter="javax.faces.Long" />
+			<h:messages />		
+				Kategori <h:inputText value="#{productController.kategori}" required="true" label="kategori"></h:inputText>
+				<br />
+				Nama <h:inputText value="#{productController.nama}" required="true" label="nama"></h:inputText>
+				<br />
+				Harga <h:inputText value="#{productController.harga}" required="true" label="harga"></h:inputText>
+				<br />
+				Stok <h:inputText value="#{productController.stok}" required="true" label="stok"></h:inputText>
+				<br />
+				Deskripsi <h:inputText value="#{productController.deskripsi}" required="true" label="deskripsi"></h:inputText>
+				<br />
+				<h:commandButton action="#{productController.save}" value="Submit" />
+			</p>
+		</h:form>
+</body>
+</html>
